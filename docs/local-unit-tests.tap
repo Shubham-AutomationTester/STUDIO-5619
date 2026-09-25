@@ -1,0 +1,224 @@
+
+> studio-5619-crawl-lab@1.0.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: collector returns 25 unique issues with pages 10, 10, 5
+ok 1 - collector returns 25 unique issues with pages 10, 10, 5
+  ---
+  duration_ms: 31.957964
+  type: 'test'
+  ...
+# Subtest: cursor loop is incomplete, never a healthy empty result
+ok 2 - cursor loop is incomplete, never a healthy empty result
+  ---
+  duration_ms: 10.020922
+  type: 'test'
+  ...
+# Subtest: missing next_cursor field does not silently truncate retrieval
+ok 3 - missing next_cursor field does not silently truncate retrieval
+  ---
+  duration_ms: 3.718831
+  type: 'test'
+  ...
+# Subtest: HTTP 429 and 503 are data retrieval failures, not zero issues
+ok 4 - HTTP 429 and 503 are data retrieval failures, not zero issues
+  ---
+  duration_ms: 4.393068
+  type: 'test'
+  ...
+# Subtest: expired data with empty items is not a clean run
+ok 5 - expired data with empty items is not a clean run
+  ---
+  duration_ms: 3.427069
+  type: 'test'
+  ...
+# Subtest: unknown availability requires review even for a complete empty result
+ok 6 - unknown availability requires review even for a complete empty result
+  ---
+  duration_ms: 3.727704
+  type: 'test'
+  ...
+# Subtest: duplicates, missing URLs and successful URLs appearing are failures
+ok 7 - duplicates, missing URLs and successful URLs appearing are failures
+  ---
+  duration_ms: 0.246244
+  type: 'test'
+  ...
+# Subtest: unknown conditional visibility prevents a premature PASS
+ok 8 - unknown conditional visibility prevents a premature PASS
+  ---
+  duration_ms: 0.125416
+  type: 'test'
+  ...
+# Subtest: filters are preserved across cursors and checked locally
+ok 9 - filters are preserved across cursors and checked locally
+  ---
+  duration_ms: 4.460768
+  type: 'test'
+  ...
+# Subtest: mismatched oracle filters are rejected
+ok 10 - mismatched oracle filters are rejected
+  ---
+  duration_ms: 0.623222
+  type: 'test'
+  ...
+# Subtest: provider parity ignores record order but compares outcomes
+ok 11 - provider parity ignores record order but compares outcomes
+  ---
+  duration_ms: 0.296769
+  type: 'test'
+  ...
+# Subtest: unavailable providers cannot pass parity
+ok 12 - unavailable providers cannot pass parity
+  ---
+  duration_ms: 0.118025
+  type: 'test'
+  ...
+# Subtest: collector scale: 10,005 unique outcomes across 1,001 pages
+ok 13 - collector scale: 10,005 unique outcomes across 1,001 pages
+  ---
+  duration_ms: 637.55557
+  type: 'test'
+  ...
+# Subtest: exactly 15,000 valid + 292 additional unique fixture URLs
+ok 14 - exactly 15,000 valid + 292 additional unique fixture URLs
+  ---
+  duration_ms: 11.507801
+  type: 'test'
+  ...
+# Subtest: profile isolation and boundary counts
+ok 15 - profile isolation and boundary counts
+  ---
+  duration_ms: 0.377328
+  type: 'test'
+  ...
+# Subtest: extended issue scale leaves the valid 15,000 untouched
+ok 16 - extended issue scale leaves the valid 15,000 untouched
+  ---
+  duration_ms: 14.659213
+  type: 'test'
+  ...
+# Subtest: reject invalid environment values
+ok 17 - reject invalid environment values
+  ---
+  duration_ms: 0.399331
+  type: 'test'
+  ...
+# Subtest: dashboard, static assets and health are reachable
+ok 18 - dashboard, static assets and health are reachable
+  ---
+  duration_ms: 26.337906
+  type: 'test'
+  ...
+# Subtest: baseline first, middle and last have unique server-rendered content
+ok 19 - baseline first, middle and last have unique server-rendered content
+  ---
+  duration_ms: 6.939995
+  type: 'test'
+  ...
+# Subtest: invalid IDs and unknown query strings do not create extra valid URLs
+ok 20 - invalid IDs and unknown query strings do not create extra valid URLs
+  ---
+  duration_ms: 5.771778
+  type: 'test'
+  ...
+# Subtest: HEAD has no body and does not count fixture GET observations
+ok 21 - HEAD has no body and does not count fixture GET observations
+  ---
+  duration_ms: 9.177243
+  type: 'test'
+  ...
+# Subtest: all eight persistent HTTP codes stay failures across requests
+ok 22 - all eight persistent HTTP codes stay failures across requests
+  ---
+  duration_ms: 13.578243
+  type: 'test'
+  ...
+# Subtest: retry HEAD does not consume the failure; GET goes 503 then 200
+ok 23 - retry HEAD does not consume the failure; GET goes 503 then 200
+  ---
+  duration_ms: 6.292157
+  type: 'test'
+  ...
+# Subtest: 429 retry returns Retry-After and recovers
+ok 24 - 429 retry returns Retry-After and recovers
+  ---
+  duration_ms: 2.620567
+  type: 'test'
+  ...
+# Subtest: four successful redirect codes lead to existing valid documents
+ok 25 - four successful redirect codes lead to existing valid documents
+  ---
+  duration_ms: 7.59251
+  type: 'test'
+  ...
+# Subtest: broken redirect targets a known 404; redirect cycle has two nodes
+ok 26 - broken redirect targets a known 404; redirect cycle has two nodes
+  ---
+  duration_ms: 5.647964
+  type: 'test'
+  ...
+# Subtest: incremental validators: ETag, weak ETag, Last-Modified and precedence
+ok 27 - incremental validators: ETag, weak ETag, Last-Modified and precedence
+  ---
+  duration_ms: 5.174824
+  type: 'test'
+  ...
+# Subtest: robots, noindex meta and response-header fixtures are real
+ok 28 - robots, noindex meta and response-header fixtures are real
+  ---
+  duration_ms: 2.691421
+  type: 'test'
+  ...
+# Subtest: all encoded, mixed-case, long and query fixtures respond 200
+ok 29 - all encoded, mixed-case, long and query fixtures respond 200
+  ---
+  duration_ms: 4.341761
+  type: 'test'
+  ...
+# Subtest: empty HTML, deliberately invalid PDF MIME and large-body fixtures
+ok 30 - empty HTML, deliberately invalid PDF MIME and large-body fixtures
+  ---
+  duration_ms: 2.450805
+  type: 'test'
+  ...
+# Subtest: delayed endpoint is nonblocking and releases its slot
+ok 31 - delayed endpoint is nonblocking and releases its slot
+  ---
+  duration_ms: 43.451167
+  type: 'test'
+  ...
+# Subtest: admin reset is POST-only and authenticated, and changes boot ID
+ok 32 - admin reset is POST-only and authenticated, and changes boot ID
+  ---
+  duration_ms: 4.119092
+  type: 'test'
+  ...
+# Subtest: manifest and observation validation are deterministic
+ok 33 - manifest and observation validation are deterministic
+  ---
+  duration_ms: 44.945998
+  type: 'test'
+  ...
+# Subtest: HTML-only discovery finds every fixture without visiting the dashboard
+ok 34 - HTML-only discovery finds every fixture without visiting the dashboard
+  ---
+  duration_ms: 95.672957
+  type: 'test'
+  ...
+# Subtest: mixed sitemap shards enumerate every fixture exactly once and escape queries
+ok 35 - mixed sitemap shards enumerate every fixture exactly once and escape queries
+  ---
+  duration_ms: 18.806787
+  type: 'test'
+  ...
+1..35
+# tests 35
+# suites 0
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 804.619443

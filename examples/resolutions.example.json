@@ -1,0 +1,10 @@
+{
+  "/cases/retry-503/0001": {
+    "expectation": "forbidden",
+    "reason": "EXAMPLE ONLY: use after confirming crawler-origin 503 then 200 and successful final indexing. Replace with your actual evidence."
+  },
+  "/cases/incremental/0001": {
+    "expectation": "forbidden",
+    "reason": "EXAMPLE ONLY: use after baseline indexing and a confirmed unchanged incremental outcome."
+  }
+}

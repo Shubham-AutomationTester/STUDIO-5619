@@ -1,0 +1,17 @@
+{
+  "name": "studio-5619-crawl-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "15,000 valid crawl URLs plus isolated, deterministic QA fixtures for STUDIO-5619",
+  "type": "module",
+  "engines": { "node": ">=22 <25" },
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --env-file-if-exists=.env server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "node scripts/verify-site.mjs",
+    "export:expected": "node scripts/export-expected.mjs",
+    "check:issues": "node scripts/check-issues.mjs",
+    "compare:providers": "node scripts/compare-providers.mjs"
+  }
+}

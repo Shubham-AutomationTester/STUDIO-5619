@@ -1,0 +1,242 @@
+{
+  "schema": "qa-origin-check/v1",
+  "scope": "Origin fixture verification only, not SearchStax/Datadog validation",
+  "failures": [],
+  "checks": 15020,
+  "startedAt": "2026-09-25T14:34:56.930Z",
+  "baseUrl": "http://localhost:4173",
+  "allValid": true,
+  "serverConfiguration": {
+    "valid": 15000,
+    "additional": 292,
+    "totalFixtureUrls": 15292,
+    "requiredIssues": 200,
+    "conditional": 92,
+    "navigationUrls": 87,
+    "groups": [
+      {
+        "group": "http-401",
+        "count": 25,
+        "status": 401,
+        "expectation": "required",
+        "note": "Persistent HTTP 401. Must be discovered and attempted; no successful recovery.",
+        "sample": "/cases/http-401/blog-0001"
+      },
+      {
+        "group": "http-403",
+        "count": 25,
+        "status": 403,
+        "expectation": "required",
+        "note": "Persistent HTTP 403. Must be discovered and attempted; no successful recovery.",
+        "sample": "/cases/http-403/blog-0001"
+      },
+      {
+        "group": "http-404",
+        "count": 25,
+        "status": 404,
+        "expectation": "required",
+        "note": "Persistent HTTP 404. Must be discovered and attempted; no successful recovery.",
+        "sample": "/cases/http-404/blog-0001"
+      },
+      {
+        "group": "http-410",
+        "count": 25,
+        "status": 410,
+        "expectation": "required",
+        "note": "Persistent HTTP 410. Must be discovered and attempted; no successful recovery.",
+        "sample": "/cases/http-410/blog-0001"
+      },
+      {
+        "group": "http-429",
+        "count": 25,
+        "status": 429,
+        "expectation": "required",
+        "note": "Persistent HTTP 429. Must be discovered and attempted; no successful recovery.",
+        "sample": "/cases/http-429/blog-0001"
+      },
+      {
+        "group": "http-500",
+        "count": 25,
+        "status": 500,
+        "expectation": "required",
+        "note": "Persistent HTTP 500. Must be discovered and attempted; no successful recovery.",
+        "sample": "/cases/http-500/blog-0001"
+      },
+      {
+        "group": "http-502",
+        "count": 25,
+        "status": 502,
+        "expectation": "required",
+        "note": "Persistent HTTP 502. Must be discovered and attempted; no successful recovery.",
+        "sample": "/cases/http-502/blog-0001"
+      },
+      {
+        "group": "http-503",
+        "count": 25,
+        "status": 503,
+        "expectation": "required",
+        "note": "Persistent HTTP 503. Must be discovered and attempted; no successful recovery.",
+        "sample": "/cases/http-503/blog-0001"
+      },
+      {
+        "group": "retry-429",
+        "count": 10,
+        "status": 429,
+        "expectation": "conditional",
+        "note": "First 1 GET request(s) return 429; later GETs return 200. HEAD does not consume attempts. Exclude only after confirmed crawler recovery.",
+        "sample": "/cases/retry-429/0001"
+      },
+      {
+        "group": "retry-503",
+        "count": 10,
+        "status": 503,
+        "expectation": "conditional",
+        "note": "First 1 GET request(s) return 503; later GETs return 200. HEAD does not consume attempts. Exclude only after confirmed crawler recovery.",
+        "sample": "/cases/retry-503/0001"
+      },
+      {
+        "group": "redirect-301",
+        "count": 5,
+        "status": 301,
+        "expectation": "conditional",
+        "note": "Redirects to an existing valid URL. Successful resolution is not an error; source URL visibility depends on the issues contract.",
+        "sample": "/cases/redirect-301/0001"
+      },
+      {
+        "group": "redirect-302",
+        "count": 5,
+        "status": 302,
+        "expectation": "conditional",
+        "note": "Redirects to an existing valid URL. Successful resolution is not an error; source URL visibility depends on the issues contract.",
+        "sample": "/cases/redirect-302/0001"
+      },
+      {
+        "group": "redirect-307",
+        "count": 5,
+        "status": 307,
+        "expectation": "conditional",
+        "note": "Redirects to an existing valid URL. Successful resolution is not an error; source URL visibility depends on the issues contract.",
+        "sample": "/cases/redirect-307/0001"
+      },
+      {
+        "group": "redirect-308",
+        "count": 5,
+        "status": 308,
+        "expectation": "conditional",
+        "note": "Redirects to an existing valid URL. Successful resolution is not an error; source URL visibility depends on the issues contract.",
+        "sample": "/cases/redirect-308/0001"
+      },
+      {
+        "group": "redirect-broken",
+        "count": 5,
+        "status": 302,
+        "expectation": "conditional",
+        "note": "Redirects to an existing persistent 404 fixture. Confirm whether source, destination, or both are reported.",
+        "sample": "/cases/redirect-broken/0001"
+      },
+      {
+        "group": "redirect-loop",
+        "count": 2,
+        "status": 302,
+        "expectation": "conditional",
+        "note": "Two URLs redirect to each other. Confirm final URL attribution and redirect limit.",
+        "sample": "/cases/redirect-loop/0001"
+      },
+      {
+        "group": "configured-exclusion",
+        "count": 5,
+        "status": 200,
+        "expectation": "conditional",
+        "note": "Add a crawler exclusion for this path. Expected exclusion must not be classified as an error; non-error visibility is contract-dependent.",
+        "sample": "/cases/configured-exclusion/0001"
+      },
+      {
+        "group": "robots-blocked",
+        "count": 5,
+        "status": 200,
+        "expectation": "conditional",
+        "note": "Disallowed in robots.txt. Must not be fetched when robots is honored. Confirm expected exclusion visibility.",
+        "sample": "/cases/robots-blocked/0001"
+      },
+      {
+        "group": "noindex-meta",
+        "count": 5,
+        "status": 200,
+        "expectation": "conditional",
+        "note": "Real HTML robots noindex tag. Check configured behavior and non-error outcome visibility.",
+        "sample": "/cases/noindex-meta/0001"
+      },
+      {
+        "group": "noindex-header",
+        "count": 5,
+        "status": 200,
+        "expectation": "conditional",
+        "note": "Real X-Robots-Tag: noindex header. Check configured behavior and non-error outcome visibility.",
+        "sample": "/cases/noindex-header/0001"
+      },
+      {
+        "group": "incremental",
+        "count": 10,
+        "status": 200,
+        "expectation": "conditional",
+        "note": "Stable body, ETag and Last-Modified. Conditional requests may return 304. Exclude unchanged incremental outcomes after a baseline run.",
+        "sample": "/cases/incremental/0001"
+      },
+      {
+        "group": "timeout",
+        "count": 3,
+        "status": 200,
+        "expectation": "conditional",
+        "note": "Waits 8000 ms before headers. Set crawler timeout below this. Timeout outcome and URL attribution must be confirmed.",
+        "sample": "/cases/timeout/0001"
+      },
+      {
+        "group": "empty-html",
+        "count": 2,
+        "status": 200,
+        "expectation": "conditional",
+        "note": "Zero-byte text/html response. Parser may skip or reject; confirm its documented policy.",
+        "sample": "/cases/empty-html/0001"
+      },
+      {
+        "group": "parser-invalid",
+        "count": 2,
+        "status": 200,
+        "expectation": "conditional",
+        "note": "Deliberately invalid bytes with application/pdf MIME type; not a real PDF. Parser failure requires file-type extraction to be enabled.",
+        "sample": "/cases/parser-invalid/0001"
+      },
+      {
+        "group": "large-body",
+        "count": 2,
+        "status": 200,
+        "expectation": "conditional",
+        "note": "HTML of at least 1048576 bytes. Requires a smaller configured size threshold to exercise rejection.",
+        "sample": "/cases/large-body/0001"
+      },
+      {
+        "group": "url-edge",
+        "count": 6,
+        "status": 200,
+        "expectation": "conditional",
+        "note": "Valid HTTP 200 URL. Confirm crawler encoding/query normalization and index identity; should not be an error after successful indexing.",
+        "sample": "/cases/url-edge/space%20name"
+      }
+    ],
+    "baseUrl": "http://localhost:4173",
+    "profile": "mixed",
+    "retryFailures": 1,
+    "delayMs": 8000,
+    "largeBodyBytes": 1048576,
+    "contentVersion": "v1",
+    "adminEnabled": true,
+    "bootId": "2ea297fe-bab6-4873-a06d-d113365cbd1e",
+    "label": "initial",
+    "warning": "Fixture HTTP responses are not crawler/indexer or Datadog evidence."
+  },
+  "checkedValidUrls": 15000,
+  "note": "Stateful retry GETs are intentionally not probed. These checks do create origin observations; reset before a real crawl.",
+  "result": "PASS",
+  "durationMs": 4083,
+  "finishedAt": "2026-09-25T14:35:01.014Z"
+}

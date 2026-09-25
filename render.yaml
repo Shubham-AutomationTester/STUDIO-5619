@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: studio-5619-crawl-lab
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: ISSUES_PER_STATUS
+        value: "25"
+      - key: RETRY_FAILURES
+        value: "1"
+      - key: DELAY_MS
+        value: "8000"
+      - key: CRAWL_PROFILE
+        value: mixed

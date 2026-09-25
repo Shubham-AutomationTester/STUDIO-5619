@@ -1,0 +1,8 @@
+{
+  "method": "Offline HTML/CSS/JS rendering with captured local API responses; live browser navigation is blocked by environment policy. HTTP behavior is tested separately.",
+  "scenarioRows": 26,
+  "retrySearchRows": 2,
+  "noMatchText": "No matching scenarios.",
+  "mobileHorizontalOverflow": false,
+  "pageErrors": []
+}

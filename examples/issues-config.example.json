@@ -1,0 +1,22 @@
+{
+  "endpoint": "REPLACE_WITH_THE_REAL_STAGING_CRAWL_ISSUES_ENDPOINT",
+  "headersFromEnv": { "Authorization": "SEARCHSTAX_AUTHORIZATION" },
+  "itemsPath": "items",
+  "nextCursorPath": "next_cursor",
+  "cursorParam": "cursor",
+  "limitParam": "limit",
+  "limit": 10,
+  "query": {},
+  "fields": {
+    "url": "url",
+    "result": "result",
+    "issue_code": "issue_code",
+    "pipeline_stage": "pipeline_stage",
+    "http_status_code": "http_status_code"
+  },
+  "availabilityPath": null,
+  "availableValues": [],
+  "errorPath": null,
+  "timeoutMs": 30000,
+  "maxPages": 20000
+}
