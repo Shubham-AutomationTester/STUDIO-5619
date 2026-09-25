@@ -16,5 +16,14 @@
     <section class="panel"><div class="section-heading"><div><p class="eyebrow">02 / KNOW YOUR EXPECTED OUTCOMES</p><h2>Fixture inventory</h2></div><label class="search-label">Find a scenario<input id="filter" type="search" placeholder="Try 404, retry, noindex..."></label></div><p class="subtle">Required = persistent failure expected in the issues list after it is attempted. Conditional = crawler settings, recovery or URL attribution must be confirmed first.</p><div class="table-wrap"><table><thead><tr><th scope="col">Scenario</th><th scope="col">URLs</th><th scope="col">HTTP behavior</th><th scope="col">Issue expectation</th><th scope="col">Notes / setup</th></tr></thead><tbody id="scenario-body"><tr><td colspan="5">Loading the server manifest...</td></tr></tbody></table></div><p class="notice">The table does not request fixture URLs. Opening a retry URL manually consumes a GET attempt. Reset counters before the real crawl and use one instance for stateful tests.</p></section>
     <section class="two-column"><article class="panel"><p class="eyebrow">03 / OBSERVE THE ORIGIN</p><h2>Current run</h2><p class="subtle">Request counts include manual visits and probes. A response here does not prove successful parsing or indexing.</p><dl><dt>Run label</dt><dd id="run-label">Loading...</dd><dt>Boot / reset ID</dt><dd id="boot-id">Loading...</dd><dt>Fixture GET attempts</dt><dd id="request-count">0</dd><dt>Pending delayed responses</dt><dd id="delay-count">0</dd></dl><button class="secondary" id="refresh" type="button">Refresh observations</button><p id="live-status" role="status" aria-live="polite"></p></article><article class="panel"><p class="eyebrow">04 / PREPARE A REPEATABLE RUN</p><h2>Reset fixture counters</h2><p class="subtle">Stop crawling first. This clears retry attempts and origin observations only. It does not delete SearchStax logs or indexed documents.</p><form id="reset-form"><label>Run label<input id="reset-label" required value="qa-run-001" pattern="[A-Za-z0-9_-]{1,64}"></label><label>Admin token<input id="admin-token" type="password" required autocomplete="off" placeholder="ADMIN_TOKEN from Render environment"></label><button type="submit">Reset fixture state</button></form><p id="reset-status" role="status" aria-live="polite"></p><p class="subtle small">The token is sent only to this origin, is never stored in browser storage, and is cleared after submission.</p></article></section>
     <section class="scope-strip"><h2>Beyond the website</h2><p>Datadog parity, expired or unavailable logs, provider rate limits, indexing failures and crawler throughput require the real platform or an authorized backend test harness. See <strong>docs/QA-PLAN.md</strong> in the repository.</p></section>
-  </main><footer>STUDIO-5619 / QA fixture v1.0 &nbsp; &middot; &nbsp; Keep the manifest, crawl ID, provider and run configuration together.</footer>
+  </main><footer>
+  <p>
+    <strong>Website Creator : Shubham Sharma</strong>
+  </p>
+  <p>
+    STUDIO-5619 / QA fixture v1.0
+    &nbsp; &middot; &nbsp;
+    Keep the manifest, crawl ID, provider and run configuration together.
+  </p>
+</footer>
 </body></html>
